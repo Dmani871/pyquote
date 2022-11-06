@@ -1,0 +1,19 @@
+# As per https://github.com/pypa/setuptools/blob/main/docs/userguide/quickstart.rst
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "integration",
+]
+
+[tool.black]
+line-length = 79
+target-version = ['py310']
+
+[tool.coverage.report]
+omit=['*/test*']
+[tool.coverage.html]
+directory = "tests/coverage/html_report/"
